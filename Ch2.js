@@ -69,7 +69,8 @@ for(let x = 0; x < 10; x++) {
 }
 
 //switch statements - same as java
-let value = Number(prompt("Enter a value from the list - 0 , 1, 2"));
+//let value = Number(prompt("Enter a value from the list - 0 , 1, 2"));
+let value = 1;
 switch (value) {
     case 0:
         console.log("value is 0");
@@ -84,3 +85,12 @@ switch (value) {
         console.log("not a valid input ");
         break;
 }
+
+// TIL String concat method returns a new string, does not change the original string
+// Diff from java
+let first = "Sareena";
+let second = " Razak";
+let combined = first.concat(second);
+console.log(first.concat(second)); //Sareena Razak
+console.log(combined === first.concat(second)); // true
+console.log(first); // Sareena
