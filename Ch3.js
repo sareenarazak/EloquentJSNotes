@@ -122,3 +122,19 @@ console.log(doggoNameGreeting("Woof", "! ")); // ["Woof", "!", "Doggo"]
 // Pure function
 // A pure function is a specific kind of value-producing
 // function that not only has no side effects but also doesn’t rely on side effects from other code
+
+// TODO Hoisitng
+// Lexical scope
+// if it's unassigned console.logging before the declaration with var gives a TypeError, and declaration with let/const
+// gives a ReferenceError. If it's assigned like in this example, var wouldn't throw errors
+// bindings declared with var behave differently—they end up in the nearest function scope or the global scope.
+
+{
+    let x = "Something";
+}
+console.log(x);
+y = 5;
+{
+    var y;
+    console.log(y);
+}

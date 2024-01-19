@@ -86,8 +86,6 @@ switch (value) {
         break;
 }
 
-// TIL String concat method returns a new string, does not change the original string
-// Diff from java
 let first = "Sareena";
 let second = " Razak";
 let combined = first.concat(second);

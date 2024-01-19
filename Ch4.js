@@ -12,19 +12,9 @@ fruits.forEach(console.log);
 // value.x --> property name is x
 // value[x] --> x is evaluated and converted to a string that is a property name
 
-// TODO : revisit --> then remove paragraphs below
-//Property names are strings. They can be any string, but the dot notation works
-// only with names that look like valid binding names. So if you want to access a property
-// named 2 or John Doe, you must use square brackets: value[2] or value["John Doe"].
-//
-// The elements in an array are stored as the array’s properties, using numbers as property names.
-// Because you can’t use the dot notation with numbers and usually want to use a binding that holds the index anyway,
-// you have to use the bracket notation to get at them.
-
 // Below two diff ways to access length property of an array
 console.log(fruits.length); // 5
 console.log((fruits["length"])); // 5
-
 
 // Properties that are  functions --> methods
 // Array properties
@@ -36,10 +26,14 @@ console.log(fruits);
 fruits[3] = "jackfruit";  // replaces orange with jackfruit
 console.log(fruits);
 
+// Go to line 96
+
 // includes checks if a value exist in the array
 console.log(fruits.includes("mango")); // true
+console.log(fruits.includes("mango", 1)); // false
 
 // Objects
+// arbitrary collections of properties
 let todos = {
     monday : ["read", "sleep", "write"],
     tuesday : ["code", "eat"]
@@ -51,17 +45,18 @@ let dogActivities = {
     "saw a squirrel" : "chased it",
     sat : "got treat"
 }
-console.log(dogActivities["saw a squirrel"]); // I think i get it
+console.log(dogActivities["saw a squirrel"]); // I think I get it
 
 console.log(dogActivities.sat);
 // assign a new value using =
-dogActivities.sat = "lied down instead";
+dogActivities.sat = "lay down instead";
 console.log(dogActivities.sat);
 
-
 // delete operation removes the property --> not commonly used
+// Q : does the property gets deleted or
 dogActivities.raccoon = "barked";
 console.log(dogActivities.raccoon);
+
 delete dogActivities.raccoon;
 console.log(dogActivities.raccoon); // undefined
 
@@ -77,7 +72,7 @@ let catActivities = {};
 Object.assign(catActivities, dogActivities);
 console.log(catActivities);
 
-// Objects are mutable
+// Mutability
 // Object equality checks the references - not contents --> no deep equality check
 let dogNames = ["inji", "mango", "boba"];
 let foodNames = dogNames;
@@ -102,10 +97,12 @@ for(let name of dogNames) console.log(name); // 'of' prints the values --> "inji
 for(let index in dogNames) console.log(index)// 'in' prints the index --> 0, 1, 2
 
 // other array stuff
-// removes the first element --> line dequeue and returns it
+// removes the first element and returns it --> like dequeue and returns it
+// let dogNames = ["inji", "mango", "boba"];
 console.log(dogNames.shift()); //"inji"
 console.log(dogNames); // ["mango", "boba"]
 //The unshift() method of Array adds the specified elements to the beginning of an array and returns the new length of the array.
+// you can also do ... operator
 console.log(dogNames.unshift("tofu")); // 3
 console.log(dogNames); //  ["tofu", "mango", "boba"]
 
@@ -122,7 +119,13 @@ console.log(dogNames); //[ 'tofu', 'mango', 'boba', 'tofu']
 console.log(dogNames.slice(1, 4)); // ['mango', 'boba', 'tofu']
 console.log(dogNames.slice(2)); // start till end  ['boba', 'tofu']
 
+///splice
+// deletes elements from start till start + count - 1 and returns
+console.log(dogNames.splice(1,2));
+console.log(dogNames);
+
 //concat creates a new array by combining two arrays
+// DOES NOT modify existing array
 console.log(dogNames.concat(fruits)); // 'tofu', 'mango', 'boba', 'tofu', 'mango', 'passionfruit', 'banana', 'jackfruit', 'grapes'
 console.log(dogNames.concat("inji"));
 
