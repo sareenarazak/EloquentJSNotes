@@ -23,6 +23,10 @@ let nameLengths = dogNames.map((n) => n.length);
 //reduce --> sum of dogname lengths
 console.log(nameLengths.reduce((l1, l2) => l1 + l2, 0)); // 17
 
+// flatten --> pass in depth(default 1)  you can pass Infinity if you dont know depth value
+const arr1 = [0, 1, 2, [3, 4]];
+
+console.log(arr1.flat()); / 0 , 1, 2, 3, 4
 
 let doggo = "inji";
 

@@ -3,6 +3,7 @@ let fruits = ["mango", "passionfruit", "banana", "orange", "grapes"];
 console.log(fruits[0]); // mango
 fruits.forEach(console.log);
 
+
 // Properties
 // -----------
 // properties are accessed by '.' or '[]'
@@ -41,10 +42,15 @@ let todos = {
 console.log(todos.monday);
 
 // if the property is not a valid variable name, use quotes
+let x = 3;
 let dogActivities = {
     "saw a squirrel" : "chased it",
-    sat : "got treat"
+    sat : "got treat",
+    [x + 1] : "Four" // [x+1] is an array  and can be a property in Java object
 }
+
+// Array.isArray() --> returns true if its an array
+// typeOf array  --> Object
 console.log(dogActivities["saw a squirrel"]); // I think I get it
 
 console.log(dogActivities.sat);
@@ -70,6 +76,7 @@ console.log(Object.keys(dogActivities)); // "saw a squirrel" , "sat"
 //'assign' copies all the properties from one to another
 let catActivities = {};
 Object.assign(catActivities, dogActivities);
+// TODO : any benefits to using Object.assign rather than
 console.log(catActivities);
 
 // Mutability

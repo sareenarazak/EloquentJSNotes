@@ -77,7 +77,7 @@ printHelloWorld("hello! ", "world");
 //                                      3) pass function as an argument to a function
 
 // CLOSURES
-//  A function that references/remembers bindings from local scopes around it is called a closure
+// A function that references/remembers bindings from local scopes around it is called a closure
 //A closure is the combination of a function bundled together (enclosed)with references to its surrounding state (the
 // lexical environment). In other words, a closure gives you access toan outer function's scope from an inner function
 // Bindings are stored in heap memory instead of stack
