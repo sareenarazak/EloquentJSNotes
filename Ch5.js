@@ -26,7 +26,7 @@ console.log(nameLengths.reduce((l1, l2) => l1 + l2, 0)); // 17
 // flatten --> pass in depth(default 1)  you can pass Infinity if you dont know depth value
 const arr1 = [0, 1, 2, [3, 4]];
 
-console.log(arr1.flat()); / 0 , 1, 2, 3, 4
+console.log(arr1.flat()); // 0 , 1, 2, 3, 4
 
 let doggo = "inji";
 
@@ -50,5 +50,5 @@ let dogData  = [ {name : "inji", age : 5}, {name : "boba" , age: 2}, {name: "lun
 console.log(dogData.findIndex((d) => d.age > 10)); // 2 --> luna
 console.log(dogData.findIndex((d) => d.age < 1)); // -1
 console.log(dogData.findIndex((d) => d.age > 1)); // 0 --> multiple, returns first index
-
+console.log(dogData.findIndex((d) => d.age > 1, 2));
 // TODO : Rewrite textbook example on scripts

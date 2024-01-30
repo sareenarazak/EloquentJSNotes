@@ -12,7 +12,12 @@ let injiNotGoodBoi = {dogName : "inji", isGoodBoi : false, woof};
 injiGoodBoi.woof();
 injiNotGoodBoi.woof();
 let injiBestBoi = {dogName : "Ini best boi", isGoodBoi : true, woof};
+injiBestBoi.woof = "true";
+console.log(injiBestBoi.woof);
+// console.log(injiBestBoi.woof());
 
+let keys = Object.keys(injiGoodBoi);
+console.log(keys);
 // another way to do method execution --> function.call (object)
 woof.call(injiBestBoi);
 
@@ -23,14 +28,18 @@ woof.call(injiBestBoi);
 // Top level prototype for any object is Object.prototype --> like in Java Object class
 
 // Object.getPrototypeOf returns the prototype of an object.
+// Object.protoType is null
 console.log(Object.getPrototypeOf(injiNotGoodBoi) === Object.prototype); // true
 
 console.log(Object.getPrototypeOf(Object.prototype)); // null  --> unsure : but looks like its cos there is no object created --> null prototype
-
 console.log(Object.getPrototypeOf({}) === Object.prototype);// true
 console.log(Object.getPrototypeOf("") === String.prototype); // true
 console.log(Object.getPrototypeOf([1]) === Array.prototype); // true
 console.log(Object.getPrototypeOf(woof) === Function.prototype); // true
+
+// TODO : look into why this works
+Object.setPrototypeOf(Array.prototype,String.prototype );
+console.log(Object.getPrototypeOf([]));
 
 // Comment : Is prototype similar to super class ?
 // You can create a prototype object and use that to create an object
@@ -64,13 +73,21 @@ createDoggo("pipin").speak("woof");
 // constructors are capitalized
 function Doggo(name) {
     this.name = name;
-}
 
+}
+console.log(Object.getPrototypeOf(Doggo));
 Doggo.prototype.speak = function (message) {
     console.log(message + " my name is " + this.name);
 };
-let bobaDog = new Doggo("boba");
+
+const bobaDog = new Doggo("boba");
 bobaDog.speak("woof");
+
+function testFun () {
+}
+console.log(Object.getPrototypeOf(testFun) === Object.getPrototypeOf(Doggo));
+// TODO : Check why we cant do testFun.speak(); --> since line 79 sets it on function prototype
+
 
 // Constructors are functions --> their prototype is function
 // But objects created using the constructor has prototype the name of function
@@ -131,7 +148,6 @@ let next = aStringIterator.next();
 while(!next.done) {
     console.log(next.value); // a /n b /n c /n d
     next = aStringIterator.next();
-
 }
 // How to add an iterator to a class
 class Doggos{
@@ -180,7 +196,7 @@ for(let doggo of doggos) {
     console.log(doggo); // "inji", "luna", "radar", "boba", "mango"
 }
 
-// Not setting iterator using line 66 --> Uncaught TypeError: doggos is not iterable
+// Not setting iterator --> Uncaught TypeError: doggos is not iterable
 
 
 // Getters and setters --> keywords 'get' and 'set'
@@ -204,6 +220,7 @@ class Hobbies{
         this.hobbies.push(newHobby);
     }
 }
+
 
 const humanHobbies = new Hobbies();
 humanHobbies.addHobby = "reading";
@@ -243,7 +260,6 @@ console.log(dogFood.food); //  ["kibble", "peanutbutter"]
 
 // Inheritance --> extends keywords --> similar to java -- we can override --> call super etc
 // author discourages from using too much of this --> class hierarchy and to avoid tight coupling
-
 // instance of
 console.log(dogFood instanceof Food); // true
 console.log(dogFood instanceof Hobbies); //false
