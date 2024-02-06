@@ -39,6 +39,10 @@
 // uses the new notation import --> instead of require("something"); --> import s from "something"
 // to export --> export function name() ...
 
-export function ch10EcmaExport() {
+function ch10EcmaExport() {
     console.log("Exporting the ECMA way");
 }
+
+export default ch10EcmaExport;
+
+

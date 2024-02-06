@@ -1,4 +1,4 @@
-import {ch10EcmaExport} from "./chapters/Ch10.js";
+import ch10EcmaExport from "./chapters/Ch10.js"; "./chapters/Ch10.js";
 // const ch8 = require("./chapters/Ch8");
 // const ch9 = require("./chapters/Ch9");
 // const ch10 = require("./chapters/Ch10");

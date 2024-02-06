@@ -1,4 +1,4 @@
-// use strict to gte some help with error finding
+// use strict to get some help with error finding
 exports.runChapter = function () {
     function notStrict() {
         count = 10; // no `let` or `const` keyword
@@ -88,7 +88,6 @@ exports.runChapter = function () {
     }
 
     try {
-
         sampleNewError(true);
     } catch (error) {
         if (error instanceof NewError) console.log("this is a new error ");

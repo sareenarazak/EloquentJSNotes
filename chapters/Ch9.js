@@ -1,4 +1,6 @@
+//TODO: need to complete the chapter
 // Creating regular expressions
+
 exports.runChapter = function () {
     const aRegDog = new RegExp("dog");
     const aRegDog_1 = /dog1/;
