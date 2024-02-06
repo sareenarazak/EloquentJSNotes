@@ -1,0 +1,12 @@
+{
+  "name": "eloquentjsnotes",
+  "version": "1.0.0",
+  "description": "\"Notes from Eloquent JS text reading\"",
+  "main": "index.js ",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sareena Razak",
+  "license": "MIT"
+}
