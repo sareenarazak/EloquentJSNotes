@@ -1,4 +1,5 @@
-import ch10EcmaExport from "./chapters/Ch10.js"; "./chapters/Ch10.js";
+// import ch10EcmaExport from "./chapters/Ch10.js";
+import {ch11} from "./chapters/Ch11.js";
 // const ch8 = require("./chapters/Ch8");
 // const ch9 = require("./chapters/Ch9");
 // const ch10 = require("./chapters/Ch10");
@@ -12,4 +13,5 @@ import ch10EcmaExport from "./chapters/Ch10.js"; "./chapters/Ch10.js";
 // ch6 does not export anything
 
 // need to add type : module in package.json
-ch10EcmaExport();
+// ch10EcmaExport();
+ch11();
