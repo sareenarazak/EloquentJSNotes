@@ -45,4 +45,27 @@ function ch10EcmaExport() {
 
 export default ch10EcmaExport;
 
+/**
+ * Node style
+ * module.exports = { key1 : value1 , key2 : value2};
+ * or
+ * module.exports = {
+ *   sayHello,
+ *   myVariable,
+ *   myObject
+ * };
+ *
+ * module.exports = <name>;
+ * const myModule  = require(./<jsfile>);
+ *
+ *
+ * ES style
+ *  export function/const/ x = --> fun
+ *  export {name1, name2 }
+ *  export default  <name>;
+ *  export default
+ *
+ * export { cube, foo, graph };
+ *  import { cube, foo, graph } from "./my-module.js";
+ */
 
