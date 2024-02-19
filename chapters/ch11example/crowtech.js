@@ -81,12 +81,11 @@ class Node {
                 console.log("handler not found ");
                 return callback(new Error("Unknown request type " + type))
             }
-        console.log("handler  found ");
 
         if (Math.random() > 0.03) setTimeout(() => {
             try {
-                console.log("Calling handler")
                 handler(toNode, ser(message), this.name, (error, response ) => {
+
                     setTimeout(() => callback(error, ser(response)), 1000)
                 })
             } catch(e) {
