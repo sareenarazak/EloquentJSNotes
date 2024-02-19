@@ -147,4 +147,18 @@ export function ch11() {
         console.log(result);
     }
     waitOnAlarm().then(() => {});
+
+    // Generators add star next to the function keyword
+    // frozen at the start until we iterate on it
+    function* generateRandomNumbers(n) {
+        while(n >= 0) {
+            n--;
+            yield Math.random()
+        }
+    }
+
+    for (let num of generateRandomNumbers(5)) {
+        console.log(num);
+    }
 }
+
