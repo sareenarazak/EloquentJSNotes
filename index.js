@@ -15,5 +15,5 @@
 // need to add type : module in package.json
 // ch10EcmaExport();
 
-import { async11 } from "./chapters/ch11example/async11.js"
-async11();
+// import { async11 } from "./chapters/ch11example/async11.js"
+// async11();
