@@ -75,7 +75,6 @@ window.addEventListener("keyup", () => {
 // mousemove can be used to track the mouse position
 const doggoBox = document.getElementById("doggo");
 
-// TODO : Add a background image of doggo and mousemove repeat
 doggoBox.addEventListener("mousedown", (event) => {
 
     if(event.button === 0) { // left mouse button
