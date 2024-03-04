@@ -37,7 +37,7 @@ export function ch14 () {
     // Changing the document
     const createdPara = document.createElement("p");
     document.body.appendChild(createdPara); // inserts at the end of the document
-    createdPara.innerText = "hello Im new"
+    createdPara.innerText = "hello Im new";
     // removes the para above from the end of the document and inserts the first paragraph element
     document.body.insertBefore(createdPara, paragraphs[0]);
 
@@ -91,11 +91,13 @@ export function ch14 () {
     // Finding precise position of the element on the screen
     const rltPos = doggoSaysBtn.getBoundingClientRect(); // relative to the top left of the screen
     console.log(`precise position of the dog button is top  ${rltPos.top}, bottom ${rltPos.bottom}, left ${rltPos.left}, right ${rltPos.right}`);
-    //relative to the document TODO: could not find pageXOffset documentation
+    //relative to the document pageXOffset documentation https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollX
 
     //Styling --> access css property using camelcase or ["property-name"];
     doggoSaysBtn.style.backgroundColor = "#add8e6";
     doggoSaysBtn.style.border = "solid 2px red";
+   // doggoSaysBtn.style = "background-color: blue; border: solid 2px black";
+
 
     const invisibleBtn = document.createElement("button");
     invisibleBtn.innerText ="Hi click me to make me vanish";
