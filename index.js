@@ -17,3 +17,5 @@
 
 // import { async11 } from "./chapters/ch11example/async11.js"
 // async11();
+import { ch11 } from "./chapters/Ch11_new.js";
+ch11();
